@@ -16,8 +16,6 @@ public abstract class Transport {
         this.weight = weight;
     }
 
-    public abstract void AutoDrift(float angle);
-
     public void setValues(String name, float speed, float angle, float weight){
         this.name = name;
         this.speed = speed;
@@ -28,6 +26,9 @@ public abstract class Transport {
         return "\n\tНазвание автомобиля: " + name + "\n\tВес автомобиля: " + weight + "\n\t";
 
     }
+
+    public abstract void AutoDrift(float angle);
+
     class Tires {
 
         private boolean isWornOut;
@@ -37,6 +38,10 @@ public abstract class Transport {
 
             this.isWornOut = isWornOut;
             this.km = km;
+        }
+
+        public void isWornOut(boolean isWornOut) {
+            this.isWornOut = isWornOut;
         }
 
         public void info() {

@@ -11,21 +11,26 @@ public class Main {
         JDM supra = new JDM("Toyota Supra",280f, 45f, false);
         supra.tires.setWornOut(true, 1000);
 
-        JDM rx10 = new JDM("Mazda RX10",1000f, 91f); {
-
-        }
+        JDM rx10 = new JDM("Mazda RX10", 1000f, 91f) {
+            @Override
+            public void AutoDrift(float angle) {
+                super.AutoDrift(angle);
+                this.tires.isWornOut(false);
+                System.out.println("Шины в идеальном состоянии");
+            }
+        };
 
 
         Truck cybertruck = new Truck("Cybertruck",25000);
 
         System.out.println("\tДанные о доступных машинах загружены.");
-        System.out.print("\tВведите, характеристики какой машины вы желаете видеть (rx7, supra, cybertruck): ");
+        System.out.print("\tВведите, характеристики какой машины вы желаете видеть (rx7, supra, cybertruck, rx10): ");
 
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
-        choice(input, rx7, supra, cybertruck);
+        choice(input, rx7, supra, cybertruck, rx10);
     }
-    public static void choice(String input, JDM rx7, JDM supra, Transport cybertruck) {
+    public static void choice(String input, JDM rx7, JDM supra, Transport cybertruck, JDM rx10) {
         switch (input) {
             case "rx7" :
                 System.out.println(rx7.getValues());
@@ -39,6 +44,10 @@ public class Main {
                 break;
             case "cybertruck" :
                 System.out.println(cybertruck.getValues());
+                break;
+            case "rx10" :
+                System.out.println(rx10.getValues());
+                rx10.AutoDrift(rx10.angle);
                 break;
             default:
                 System.out.println("\tМашина не найдена");

@@ -11,12 +11,12 @@ public class JDM extends Transport {
     }
 
     @Override
-    public void AutoDrift(float angle) {}
-    /*    boolean autodrift;
+    public void AutoDrift(float angle) {
         if (angle > 90)
-            autodrift = true;
+            System.out.println("Автодрифт включен");
         else
-            autodrift = false;  */
+            System.out.println("Автодрифт выключен");
+    }
 
 
 
