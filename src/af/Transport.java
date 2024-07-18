@@ -12,7 +12,8 @@ public class Transport {
     }
 
     public Transport(String name, int weight) {
-        setValues(name, speed, angle, weight);
+        this.name = name;
+        this.weight = weight;
     }
 
     public void setValues(String name, float speed, float angle, float weight){

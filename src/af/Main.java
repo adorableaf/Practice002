@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         JDM rx7 = new JDM("Mazda RX7",280f, 45f);
         JDM supra = new JDM("Toyota Supra",280f, 45f, false);
-        Transport cybertruck = new Transport("Cybertruck",25000);
+        Truck cybertruck = new Truck("Cybertruck",25000);
 
         System.out.println("\tДанные о доступных машинах загружены.");
         System.out.print("\tВведите, характеристики какой машины вы желаете видеть (rx7, supra, cybertruck): ");
