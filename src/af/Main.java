@@ -4,8 +4,18 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         JDM rx7 = new JDM("Mazda RX7",280f, 45f);
+        rx7.tires.setWornOut(false, 50);
+
         JDM supra = new JDM("Toyota Supra",280f, 45f, false);
+        supra.tires.setWornOut(true, 1000);
+
+        JDM rx10 = new JDM("Mazda RX10",1000f, 91f); {
+
+        }
+
+
         Truck cybertruck = new Truck("Cybertruck",25000);
 
         System.out.println("\tДанные о доступных машинах загружены.");
@@ -20,10 +30,12 @@ public class Main {
             case "rx7" :
                 System.out.println(rx7.getValues());
                 rx7.getCool();
+                rx7.tires.info();
                 break;
             case "supra" :
                 System.out.println(supra.getValues());
                 supra.getCool();
+                supra.tires.info();
                 break;
             case "cybertruck" :
                 System.out.println(cybertruck.getValues());

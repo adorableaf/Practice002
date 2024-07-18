@@ -1,10 +1,10 @@
 package af;
 
-public class Transport {
+public abstract class Transport {
 
     protected String name;
     protected float speed;
-    protected float angle;
+    public float angle;
     protected float weight;
 
     public Transport(String name, float speed, float angle) {
@@ -16,6 +16,8 @@ public class Transport {
         this.weight = weight;
     }
 
+    public abstract void AutoDrift(float angle);
+
     public void setValues(String name, float speed, float angle, float weight){
         this.name = name;
         this.speed = speed;
@@ -24,6 +26,25 @@ public class Transport {
     }
     public String getValues() {
         return "\n\tНазвание автомобиля: " + name + "\n\tВес автомобиля: " + weight + "\n\t";
+
+    }
+    class Tires {
+
+        private boolean isWornOut;
+        private int km;
+
+        public void setWornOut(boolean isWornOut, int km) {
+
+            this.isWornOut = isWornOut;
+            this.km = km;
+        }
+
+        public void info() {
+            if (!isWornOut)
+                System.out.println("\n\tШины в пригодном состоянии");
+            else
+                System.out.println("\n\tШины изношены. Износ: " + km + " км");
+        }
 
     }
 }

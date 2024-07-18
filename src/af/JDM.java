@@ -3,11 +3,22 @@ package af;
 public class JDM extends Transport {
 
     private boolean isCool;
+    public Tires tires = new Tires();
 
     public JDM(String name, float speed, float angle) {
         super(name, speed, angle);
         setCool(true);
     }
+
+    @Override
+    public void AutoDrift(float angle) {}
+    /*    boolean autodrift;
+        if (angle > 90)
+            autodrift = true;
+        else
+            autodrift = false;  */
+
+
 
     public JDM(String name, float speed, float angle, boolean isCool) {
         super(name, speed, angle);
