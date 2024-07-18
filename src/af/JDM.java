@@ -15,8 +15,8 @@ public class JDM {
         vehicle_age = age;
         vehicle_weight = weight;
     }
-    public String getValues() {
+    public void getValues() {
         System.out.println("\n Название автомобиля: " + vehicle_name + "\n Скорость автомобиля: " + vehicle_speed + "\n Угол дрифта: " + drift_angle + "\n Год выпуска: " + vehicle_age + "\n Вес автомобиля: " + vehicle_weight + "\n");
-        return null;
+
     }
 }
