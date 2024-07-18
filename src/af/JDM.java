@@ -2,21 +2,31 @@ package af;
 
 public class JDM {
 
-    public String vehicle_name;
-    public float vehicle_speed;
-    public float drift_angle;
-    public int vehicle_age;
-    public float vehicle_weight;
+    private String name;
+    private float speed;
+    private float angle;
+    private int age;
+    private float weight;
+    private String desc;
 
-    public void setValues(String name, float speed, float angle, int age, float weight){
-        vehicle_name = name;
-        vehicle_speed = speed;
-        drift_angle = angle;
-        vehicle_age = age;
-        vehicle_weight = weight;
+    public JDM(String name, float speed, float angle, int age, float weight) {
+        setValues(name, speed, angle, age, weight, desc);
     }
-    public void getValues() {
-        System.out.println("\n Название автомобиля: " + vehicle_name + "\n Скорость автомобиля: " + vehicle_speed + "\n Угол дрифта: " + drift_angle + "\n Год выпуска: " + vehicle_age + "\n Вес автомобиля: " + vehicle_weight + "\n");
+
+    public JDM(String name, float speed, float angle, int age, float weight, String desc) {
+        setValues(name, speed, angle, age, weight, desc);
+    }
+
+    public void setValues(String name, float speed, float angle, int age, float weight, String desc){
+        this.name = name;
+        this.speed = speed;
+        this.angle = angle;
+        this.age = age;
+        this.weight = weight;
+        this.desc = desc;
+    }
+    public String getValues() {
+        return "\n Название автомобиля: " + name + "\n Скорость автомобиля: " + speed + "\n Угол дрифта: " + angle + "\n Год выпуска: " + age + "\n Вес автомобиля: " + weight + "\n";
 
     }
 }
