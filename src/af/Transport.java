@@ -2,10 +2,10 @@ package af;
 
 public class Transport {
 
-    private String name;
-    private float speed;
-    private float angle;
-    private float weight;
+    protected String name;
+    protected float speed;
+    protected float angle;
+    protected float weight;
 
     public Transport(String name, float speed, float angle) {
         setValues(name, speed, angle, weight);
@@ -22,7 +22,7 @@ public class Transport {
         this.weight = weight;
     }
     public String getValues() {
-        return "\n\tНазвание автомобиля: " + name + "\n\tСкорость автомобиля: " + speed + "\n\tУгол дрифта: " + angle + "\n\tВес автомобиля: " + weight + "\n\t";
+        return "\n\tНазвание автомобиля: " + name + "\n\tВес автомобиля: " + weight + "\n\t";
 
     }
 }
