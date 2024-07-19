@@ -7,6 +7,7 @@ public class Main {
 
         JDM rx7 = new JDM("Mazda RX7",280f, 45f);
         rx7.tires.setWornOut(false, 50);
+        rx7.setBreaker(true);
 
         JDM supra = new JDM("Toyota Supra",280f, 45f, false);
         supra.tires.setWornOut(true, 1000);
@@ -23,7 +24,7 @@ public class Main {
 
         Truck cybertruck = new Truck("Cybertruck",25000);
 
-        System.out.println("\tДанные о доступных машинах загружены.");
+        System.out.println("\n\tДанные о доступных машинах загружены.");
         System.out.print("\tВведите, характеристики какой машины вы желаете видеть (rx7, supra, cybertruck, rx10): ");
 
         Scanner scanner = new Scanner(System.in);
@@ -36,6 +37,7 @@ public class Main {
                 System.out.println(rx7.getValues());
                 rx7.getCool();
                 rx7.tires.info();
+                rx7.infoBreaker();
                 break;
             case "supra" :
                 System.out.println(supra.getValues());

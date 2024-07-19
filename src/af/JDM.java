@@ -1,6 +1,6 @@
 package af;
 
-public class JDM extends Transport {
+public class JDM extends Transport implements IBreaker {
 
     private boolean isCool;
     public Tires tires = new Tires();
@@ -17,8 +17,6 @@ public class JDM extends Transport {
         else
             System.out.println("Автодрифт выключен");
     }
-
-
 
     public JDM(String name, float speed, float angle, boolean isCool) {
         super(name, speed, angle);
@@ -40,5 +38,17 @@ public class JDM extends Transport {
         } else {
             System.out.print("\tCringe car");
         }
+    }
+
+    boolean breaker = false;
+
+    @Override
+    public void setBreaker(boolean breaker) {
+        this.breaker = true;
+    }
+
+    @Override
+    public void infoBreaker() {
+        System.out.println("\n\tМашина на ручнике.");
     }
 }
