@@ -9,7 +9,7 @@ public class Main {
         rx7.tires.setWornOut(false, 50);
         rx7.setBreaker(true);
 
-        JDM supra = new JDM("Toyota Supra",280f, 45f, false);
+        JDM supra = new JDM("Toyota Supra",279f, 44f, false);
         supra.tires.setWornOut(true, 1000);
 
         JDM rx10 = new JDM("Mazda RX10", 1000f, 91f) {
